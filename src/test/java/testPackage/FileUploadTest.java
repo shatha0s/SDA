@@ -24,6 +24,8 @@ public class FileUploadTest extends TestBase{
         driver.findElement(fileUploadInput).sendKeys("C:/Users/Admin/OneDrive/الصور/smart.jpg");
 
         driver.findElement(fileUploadInput).submit();
+// hi
+
 
         By uploadSuccessfullyLabel = By.tagName("h3");
         Assertions.assertEquals("File Uploaded!", driver.findElement(uploadSuccessfullyLabel).getText());
