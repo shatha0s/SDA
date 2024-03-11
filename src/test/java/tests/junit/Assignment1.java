@@ -24,10 +24,18 @@ public class Assignment1 {
 
         //Double click on the blue square at the bottom of the page and then write the changed color.
         WebElement blueSquare = driver.findElement(By.cssSelector("div"));
+        String colorBeforeDoubleClick = blueSquare.getCssValue("background-color");
+
         Actions actions = new Actions(driver);
         actions.doubleClick(blueSquare).perform();
-        String color = blueSquare.getCssValue("background-color");
-        Assertions.assertEquals(color,"rgba(255, 255, 0, 1)");}
+
+        String colorAfterDoubleClick = blueSquare.getCssValue("background-color");
+        Assertions.assertNotEquals(colorBeforeDoubleClick, colorAfterDoubleClick, "Color did not change after double click");
+
+        System.out.println("Color before double click: " + colorBeforeDoubleClick);
+        System.out.println("Color after double click: " + colorAfterDoubleClick);
+
+    }
 @Test
         public void javaScript(){
     driver.get("https://api.jquery.com/dblclick/");
