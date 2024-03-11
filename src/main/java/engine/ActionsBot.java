@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Wait;
 
 public class ActionsBot {
     private final WebDriver driver;
-    private final WaitWebDriver wait;
+    private final Wait <WebDriver> wait;
     private final Logger logger;
 
     public ActionsBot(WebDriver driver, Wait<WebDriver> wait, Logger logger) {
