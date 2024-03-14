@@ -2,32 +2,29 @@ package tests.junit;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.Set;
 
-public class Assignment5 {
+/*   Go to URL: http://facebook.com
+     getCookies,
+     addCookie,
+     deleteCookieNamed,
+     deleteAllCookies
+*/
+public class Assignment5 extends TestBase {
     @Test
     public void cookie(){
-
-    WebDriver driver = new ChromeDriver();
-        driver.get("https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F");
+        driver.get("http://facebook.com");
 
     // Get all the cookies
         Set<Cookie> cookies = driver.manage().getCookies();
-        System.out.println("All Cookies:");
-        for (Cookie cookie : cookies) {
-            System.out.println(cookie.getName() + " : " + cookie.getValue());
-    }
+        cookies.forEach(System.out::println);
+
     // Add a new cookie
-    Cookie newCookie = new Cookie("exampleCookie", "exampleValue");
+      Cookie newCookie = new Cookie("Shatha", "Aziz");
         driver.manage().addCookie(newCookie);
 
-    // Delete a specific cookie by name
-        driver.manage().deleteCookieNamed("exampleCookie");
-    // Delete all cookies
-        driver.manage().deleteAllCookies();
+        driver.manage().deleteCookieNamed("sugar"); // Delete a specific cookie by name
+        driver.manage().deleteAllCookies(); // Delete all cookies
 
         driver.quit();
 }
