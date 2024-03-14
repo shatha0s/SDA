@@ -20,8 +20,8 @@ public class Assignment7  extends TestBase{
         FileUtils.copyFile(Amazonpagefile, new File("target/sreenshot1" + System.currentTimeMillis() + ".png"));
 
        // Take any spesific WebElement ScreenShot
-        WebElement AsosWebsite = driver.findElement(By.id("nav-logo"));
-        File AmazonLOGOSS = AsosWebsite.getScreenshotAs(OutputType.FILE);
+        WebElement AmazonLOGO = driver.findElement(By.id("nav-logo"));
+        File AmazonLOGOSS = AmazonLOGO.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(AmazonLOGOSS, new File("target/sreenshot2"+System.currentTimeMillis()+".png"));
 }}
 
