@@ -1,6 +1,15 @@
 {
-  "name": "Shatha Aziz",
-  "age": 23,
-  "city": "Medina",
+  "Assignment3Data": {
+    "Username": "student",
+    "Password": "incorrectPassword"
+  },
+    "SoftAssertionsTestData": {
+      "Username": "student",
+      "Password": "Password123"
+    },
   "searchQuery": "Selenium WebDriver"
 }
+
+
+
+
