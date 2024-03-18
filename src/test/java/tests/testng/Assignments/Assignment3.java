@@ -26,8 +26,5 @@ public class Assignment3 extends Tests {
         softAssert.assertEquals(driver.findElement(errorMessage).getText(), "Your password is invalid!", "Error message is incorrect");
         softAssert.assertAll();
     }
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+
 }
