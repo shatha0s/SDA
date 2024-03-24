@@ -5,9 +5,11 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+ /*  go to url : https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+            register account test with fluent page object approach
+         */
+
 public class Register extends Pages{
-
-
     private final String url = "https://ecommerce-playground.lambdatest.io/index.php?route=account/register";
     private final By firstName = By.id("input-firstname");
     private final By lastName = By.id("input-lastname");
@@ -21,12 +23,12 @@ public class Register extends Pages{
     public Register(WebDriver driver, ActionsBot bot) {
         super(driver, bot );
     }
-    @Step
+
+    @Step("navigate to url")
     public Register goTo() {
         bot.navigate(url);
         return this;
     }
-
     @Step("Fill the required ")
     public Register register (CharSequence FirstName , CharSequence LastName , CharSequence Email, CharSequence telephone ,CharSequence Password){
         bot.type(firstName , FirstName);
@@ -39,6 +41,4 @@ public class Register extends Pages{
         bot.click(ContinueButton);
         return this;
     }
-
-
 }

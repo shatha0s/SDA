@@ -10,6 +10,4 @@ public  abstract class Pages {
         this.driver = driver;
         this.bot = bot;
     }
-
-
 }
